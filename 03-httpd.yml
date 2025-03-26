@@ -6,16 +6,16 @@
   tasks:
     - name: Install HTTPD
       yum:
-        name: HTTPD
+        name: httpd
         state: present
 
-    - name: start HTTPD
+    - name: start httpd
       service:
         name: httpd
         state: started
 
 
-- name: enable HTTPD
+- name: enable httpd
   service:
     name: httpd
     enabled: yes
