@@ -1,0 +1,23 @@
+# ansible n1 -m file -a "path/home/ec2-user/ all_dir state=directory"
+---
+- name: Install HTTP servers
+  hosts: n2
+  become: yes
+  tasks:
+    - name: Install HTTPD
+      yum:
+        name: HTTPD
+        state: present
+
+    - name: start HTTPD
+      service:
+        name: httpd
+        state: started
+
+
+- name: enable HTTPD
+  service:
+    name: httpd
+    enabled: yes
+...
+ 
