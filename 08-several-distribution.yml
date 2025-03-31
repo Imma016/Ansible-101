@@ -43,6 +43,4 @@
         name: apache2
         enabled: yes
       when: ansible_distribution == "Ubuntu"
-
-
 ...
