@@ -8,20 +8,20 @@
       yum:
         name: httpd
         state: present
-      when: ansible_distribution== "Amazon"
+      when: ansible_distribution == "Amazon"
 
-    - name: start httpd
+    - name: Start httpd
       service:
         name: httpd
         state: started
-        when: ansible_distribution== "Amazon"
+      when: ansible_distribution == "Amazon"
 
-    - name: enable httpd
+    - name: Enable httpd to start on boot
       service:
         name: httpd
         enabled: yes
-        when: ansible_distribution== "Amazon"
-        
+      when: ansible_distribution == "Amazon"
+
 - name: Install and configure Apache2 on Ubuntu
   hosts: master
   become: yes
