@@ -21,7 +21,7 @@
         name: httpd
         enabled: yes
         when: ansible_distribution== "Amazon"
-
+        
 - name: Install and configure Apache2 on Ubuntu
   hosts: master
   become: yes
@@ -33,13 +33,13 @@
       when: ansible_distribution == "Ubuntu"
 
     - name: Start Apache2
-      service:
+      systemd:
         name: apache2
         state: started
       when: ansible_distribution == "Ubuntu"
 
     - name: Enable Apache2 to start on boot
-      service:
+      systemd:
         name: apache2
         enabled: yes
       when: ansible_distribution == "Ubuntu"
