@@ -23,10 +23,6 @@
         enabled: yes
       when: ansible_distribution == "Amazon"
 
-- name: Install and configure Apache2 on Ubuntu
-  hosts: master
-  become: yes
-  tasks:
     - name: Install Apache2
       apt:
         name: apache2
